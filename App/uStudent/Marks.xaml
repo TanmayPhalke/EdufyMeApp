@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             Visual="Material"
+             BackgroundColor="#FFEBEE"            
+            Title="Back To Dashboard"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App.uStudent.Marks">
+    <ContentPage.Content>
+        <StackLayout Padding="25">
+            <StackLayout Orientation="Horizontal">
+                <Picker x:Name="ExamType_Picker" Title="Select Exam" HorizontalOptions="FillAndExpand" BackgroundColor="White" TextColor="Black">
+                    <Picker.Items>
+                        <x:String>Unit Test</x:String>
+                        <x:String>Semester</x:String>
+                    </Picker.Items>
+                </Picker>
+                <Button Text="View Marks" TextColor="White" BackgroundColor="DodgerBlue" x:Name="ViewMarks_Button" Clicked="ViewMarks_Button_Clicked" />
+            </StackLayout>
+            
+            <Line HorizontalOptions="FillAndExpand"   Stroke="DarkBlue" StrokeDashArray="1,1" StrokeDashOffset="6" X1="0" X2="1500"/>
+
+            <ListView x:Name="Marks_List" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label Text="{Binding SUBJECT}" HorizontalOptions="FillAndExpand" Margin="0,0,0,5" TextColor="Black" FontSize="Large"/>
+                                <Line HorizontalOptions="FillAndExpand"   Stroke="Black" StrokeDashArray="1,1" StrokeDashOffset="6" X1="0" X2="1500"/>
+
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Marks Obtained: " HorizontalOptions="EndAndExpand" FontSize="Small" Margin="0,0,0,5" TextColor="Black"/>
+                                    <Label Text="{Binding MARKS_OBTAIN}" HorizontalOptions="EndAndExpand" FontSize="Small" Margin="0,0,0,5" TextColor="Black"/>
+                                </StackLayout>
+
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Marks Out Of: " HorizontalOptions="EndAndExpand" FontSize="Small" Margin="0,0,0,5" TextColor="Black"/>
+                                    <Label Text="{Binding MARKS_OUTOF}" HorizontalOptions="EndAndExpand" FontSize="Small" Margin="0,0,0,5" TextColor="Black"/>
+                                </StackLayout>
+
+                                <!--<StackLayout Orientation="Horizontal">
+                                    <Label Text="Result: " HorizontalOptions="EndAndExpand" FontSize="Small" Margin="0,0,0,5" TextColor="Black"/>
+                                    <Label Text="{Binding Presenty_Percentage}" HorizontalOptions="EndAndExpand" FontSize="Small" Margin="0,0,0,5" TextColor="Black"/>
+                                </StackLayout>-->
+
+                                <Line HorizontalOptions="FillAndExpand"   Stroke="DarkBlue" StrokeDashArray="1,1" StrokeDashOffset="6" X1="0" X2="1500"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

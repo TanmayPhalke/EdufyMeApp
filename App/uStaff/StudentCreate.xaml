@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Visual="Material"
+             BackgroundColor="#FFEBEE"
+             x:Class="App.uStaff.StudentCreate">
+    <ContentPage.Content>
+        <StackLayout Padding="25">
+
+            <StackLayout Orientation="Horizontal">
+                <Picker x:Name="Branch_Picker" Title="Select Branch" HorizontalOptions="FillAndExpand" BackgroundColor="White" TextColor="Black">
+                    <Picker.Items>
+                        <x:String>Computer</x:String>
+                        <x:String>Information Technology</x:String>
+                        <x:String>Electronic and Telecommunication</x:String>
+                        <x:String>Industrial Electronic</x:String>
+                        <x:String>Mechanical</x:String>
+                        <x:String>Civil</x:String>
+                    </Picker.Items>
+                </Picker>
+
+                <Picker x:Name="YY_Picker" Title="Select Year" HorizontalOptions="FillAndExpand" BackgroundColor="White" TextColor="Black">
+                    <Picker.Items>
+                        <x:String>FIRST YEAR</x:String>
+                        <x:String>SECOND YEAR</x:String>
+                        <x:String>THIRD YEAR</x:String>
+                        <x:String>FINAL YEAR</x:String>
+                    </Picker.Items>
+                </Picker>
+
+                <Picker x:Name="Title_Picker" Title="Select Title" HorizontalOptions="FillAndExpand" BackgroundColor="White" TextColor="Black">
+                    <Picker.Items>
+                        <x:String>Mr.</x:String>
+                        <x:String>Miss.</x:String>
+                        <x:String>Mrs.</x:String>
+                    </Picker.Items>
+                </Picker>
+                
+            </StackLayout>
+            <Entry Placeholder="FirstName LastName" HorizontalOptions="FillAndExpand" x:Name="SNAME_Entry" TextColor="Black" BackgroundColor="White"/>
+
+
+            <StackLayout Orientation="Horizontal">
+                <Entry Placeholder="Email" x:Name="EMAIL_Entry" HorizontalOptions="FillAndExpand" Keyboard="Email" TextColor="Black" BackgroundColor="White"/>
+                <Entry Placeholder="Mobile" MaxLength="10" x:Name="MOBILE_Entry" HorizontalOptions="FillAndExpand" Keyboard="Numeric" TextColor="Black" BackgroundColor="White"/>
+            </StackLayout>
+
+            <Entry Placeholder="Roll Number" x:Name="ROLL_Entry" TextColor="Black" BackgroundColor="White"/>
+            <Button x:Name="SubmitButton" 
+                    Text="Submit" 
+                    HeightRequest="50"                    
+                    TextColor="White" 
+                    Clicked="SubmitButton_Clicked"
+                    BackgroundColor="DodgerBlue"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

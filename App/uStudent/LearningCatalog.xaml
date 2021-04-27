@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             BackgroundColor="AliceBlue"
+             NavigationPage.HasNavigationBar="True"
+             x:Class="App.uStudent.LearningCatalog">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <StackLayout x:Name="LabelStack">
+            <Label Text="Hello!" HorizontalOptions="Center" TextColor="DodgerBlue" FontSize="55" FontAttributes="Bold"/>
+            <Label Text="What would you like to learn today?" FontSize="Large" FontAttributes="Italic,Bold" TextColor="Coral" HorizontalOptions="Center" 
+                   />
+            </StackLayout>
+            <StackLayout x:Name="CourseStack">
+                <Button x:Name="MachineLearningButton" Text="Machine Learning" Clicked="MLButton_Clicked" BackgroundColor="DodgerBlue" FontSize="Large" HorizontalOptions="Center" WidthRequest="300" Margin="10" />
+                <Button x:Name="DataStructuresButton" Text="Data Structures" Clicked="DSButton_Clicked" BackgroundColor="DodgerBlue" FontSize="Large" HorizontalOptions="Center" WidthRequest="300" Margin="10"/>
+                <Button x:Name="DataScienceButton" Text="Data Science" Clicked="DSciButtonClicked" BackgroundColor="DodgerBlue" FontSize="Large" HorizontalOptions="Center" WidthRequest="300" Margin="10"/>
+                <Button x:Name="NewSkillButton" Text="Get New Skills!" Clicked="GetStartedButton_Clicked" BackgroundColor="DodgerBlue" FontSize="Large" HorizontalOptions="Center" WidthRequest="300" Margin="10"/>
+            </StackLayout>
+            <WebView x:Name="Browser" IsVisible="false" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

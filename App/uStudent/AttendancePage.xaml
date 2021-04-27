@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Visual="Material"
+             BackgroundColor="#FFEBEE"            
+            Title="Back To Dashboard"
+             x:Class="App.uStudent.AttendancePage">
+    <ContentPage.Content>
+        <StackLayout Padding="25">
+            <Label Text="Your Attendance Total" HorizontalOptions="CenterAndExpand" />
+            <Line HorizontalOptions="FillAndExpand"   Stroke="DarkBlue" StrokeDashArray="1,1" StrokeDashOffset="6" X1="0" X2="1500"/>
+
+            <ListView x:Name="Attendance_List" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label Text="{Binding SubjectName}" HorizontalOptions="FillAndExpand" Margin="0,0,0,5" TextColor="Black" FontSize="Large"/>
+                                <Line HorizontalOptions="FillAndExpand"   Stroke="Black" StrokeDashArray="1,1" StrokeDashOffset="6" X1="0" X2="1500"/>
+
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Total Lectures: " HorizontalOptions="EndAndExpand" FontSize="Small" Margin="0,0,0,5" TextColor="Black"/>
+                                    <Label Text="{Binding Total_Lectures}" HorizontalOptions="EndAndExpand" FontSize="Small" Margin="0,0,0,5" TextColor="Black"/>
+                                </StackLayout>
+
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Your Presenty: " HorizontalOptions="EndAndExpand" FontSize="Small" Margin="0,0,0,5" TextColor="Black"/>
+                                    <Label Text="{Binding Total_Present}" HorizontalOptions="EndAndExpand" FontSize="Small" Margin="0,0,0,5" TextColor="Black"/>
+                                </StackLayout>
+
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Total Presenty Percentage: " HorizontalOptions="EndAndExpand" FontSize="Small" Margin="0,0,0,5" TextColor="Black"/>
+                                    <Label Text="{Binding Presenty_Percentage}" HorizontalOptions="EndAndExpand" FontSize="Small" Margin="0,0,0,5" TextColor="Black"/>
+                                </StackLayout>
+
+                                <Line HorizontalOptions="FillAndExpand"   Stroke="DarkBlue" StrokeDashArray="1,1" StrokeDashOffset="6" X1="0" X2="1500"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+
+
+    </ContentPage.Content>
+</ContentPage>

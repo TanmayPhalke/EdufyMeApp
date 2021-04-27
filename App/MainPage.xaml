@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"             
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="#FFEBEE"
+             Visual="Material"
+             x:Class="App.MainPage">
+
+    <StackLayout Padding="25" VerticalOptions="CenterAndExpand">
+
+        
+        <Image Source="mainlogo.png" HorizontalOptions="CenterAndExpand"/>
+
+        <Picker x:Name="Role_Picker" Title="Select Account" BackgroundColor="White" TextColor="Black">
+            <Picker.Items>
+                <x:String>STUDENT</x:String>
+                <x:String>STAFF</x:String>
+                <x:String>ADMIN</x:String>
+            </Picker.Items>
+        </Picker>
+
+        <Entry x:Name="UID_Entry" Text="" Placeholder="Email" BackgroundColor="White" TextColor="Black" WidthRequest="250" Keyboard="Email" />
+        <Entry x:Name="PASS_Entry" Text="" Placeholder="Password" IsPassword="True" WidthRequest="250" BackgroundColor="White" TextColor="Black" />
+
+        <StackLayout Orientation="Horizontal">
+            <Button x:Name="Login_Button" Text="Login" HeightRequest="50" BackgroundColor="#42A5F5" TextColor="White" HorizontalOptions="FillAndExpand" Clicked="Login_Button_Clicked"/>
+            <Button x:Name="ForgotPassword_Button" Text="Forgot Pasword?" HeightRequest="50" BackgroundColor="#D32F2F" HorizontalOptions="FillAndExpand" TextColor="White" Clicked="ForgotPassword_Button_Clicked"/>
+        </StackLayout>
+
+    </StackLayout>
+
+</ContentPage>

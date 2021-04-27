@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App.uStaff.StudentViewList">
+    <ContentPage.Content>
+        <StackLayout Padding="25">
+
+            <StackLayout Orientation="Horizontal">
+                <Picker x:Name="Branch_Picker" Title="Select Branch" HorizontalOptions="FillAndExpand" BackgroundColor="White" TextColor="Black">
+                    <Picker.Items>
+                        <x:String>Computer</x:String>
+                        <x:String>Information Technology</x:String>
+                        <x:String>Electronic and Telecommunication</x:String>
+                        <x:String>Industrial Electronic</x:String>
+                        <x:String>Mechanical</x:String>
+                        <x:String>Civil</x:String>
+                    </Picker.Items>
+                </Picker>
+
+                <Picker x:Name="YY_Picker" Title="Select Year" HorizontalOptions="FillAndExpand" BackgroundColor="White" TextColor="Black">
+                    <Picker.Items>
+                        <x:String>FIRST YEAR</x:String>
+                        <x:String>SECOND YEAR</x:String>
+                        <x:String>THIRD YEAR</x:String>
+                        <x:String>FINAL YEAR</x:String>
+                    </Picker.Items>
+                </Picker>
+
+                <Button x:Name="Search_Button" 
+                    Text="Go" 
+                    HeightRequest="50"                    
+                    TextColor="White" 
+                    Clicked="Search_Button_Clicked"
+                    Margin="0,0,0,10"
+                    BackgroundColor="DodgerBlue"/>
+            </StackLayout>
+
+
+            <ListView x:Name="StudentList" HasUnevenRows="True" ItemTapped="StudentList_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Roll Number: " Margin="0,0,0,5" TextColor="Black" FontSize="Medium"/>
+                                    <Label Text="{Binding PE}" HorizontalOptions="FillAndExpand" Margin="0,0,0,5" TextColor="Black" FontSize="Medium"/>
+                                </StackLayout>
+
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Name: " Margin="0,0,0,5" TextColor="Black" FontSize="Medium"/>
+                                    <Label Text="{Binding UNAME}" HorizontalOptions="FillAndExpand" Margin="0,0,0,5" TextColor="Black" FontSize="Large"/>
+                                </StackLayout>
+
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Email: " Margin="0,0,0,5" TextColor="Black" FontSize="Medium"/>
+                                    <Label Text="{Binding EMAIL}" HorizontalOptions="FillAndExpand" Margin="0,0,0,5" TextColor="Black" FontSize="Medium"/>
+                                </StackLayout>
+
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Mobile: " Margin="0,0,0,5" TextColor="Black" FontSize="Medium"/>
+                                    <Label Text="{Binding MOBILE}" HorizontalOptions="FillAndExpand" Margin="0,0,0,5" TextColor="Black" FontSize="Medium"/>
+                                </StackLayout>
+                                <Line HorizontalOptions="FillAndExpand"   Stroke="DarkBlue" StrokeDashArray="1,1" StrokeDashOffset="6" X1="0" X2="1500"/>
+
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

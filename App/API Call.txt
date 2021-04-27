@@ -1,0 +1,39 @@
+﻿[post call]
+
+private async void SubmitButton_Clicked(object sender, EventArgs e)
+        {
+            var values = new Dictionary<string, string>
+                {
+                    { "ECITY", $"{ECITY.Text.ToUpper()}" },
+                    { "MCITY", $"{MCITY.Text}" }
+                };
+
+            var content = new FormUrlEncodedContent(values);
+            client.DefaultRequestHeaders.UserAgent.ParseAdd("Mozilla/5.0 (compatible; AcmeInc/1.0)");
+            var response = await client.PostAsync("https://", content);
+            var responseString = await response.Content.ReadAsStringAsync();
+        }
+
+
+[  get call      ]
+
+List<Cities> lc = new List<Cities>();
+            var client = new HttpClient();
+            client.DefaultRequestHeaders.UserAgent.ParseAdd("Mozilla/5.0 (compatible; AcmeInc/1.0)");
+            var uri = "https://api.rajniagency.in/Cities/GetAllCities";
+            var result = await client.GetStringAsync(uri);
+            var JSON_DATA = JsonConvert.DeserializeObject<List<Cities>>(result);
+            Console.WriteLine(result);
+            for (int i = 0; i < JSON_DATA.Count; i++)
+            {
+                Cities cs = new Cities()
+                {
+                    SERIAL = JSON_DATA[i].SERIAL,
+                    ECITY = JSON_DATA[i].ECITY,
+                    MCITY = JSON_DATA[i].MCITY,
+                    STATUS = JSON_DATA[i].STATUS
+                };
+                lc.Add(cs);
+            }
+
+            CitiesList.ItemsSource = lc;

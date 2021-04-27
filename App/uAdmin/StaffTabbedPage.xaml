@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:local ="clr-namespace:App.uAdmin"
+            Visual="Material"
+             BackgroundColor="#FFEBEE"
+            Title="Back To Dashboard"
+             x:Class="App.uAdmin.StaffTabbedPage">
+
+    <local:StaffCreatePage Title="Create Staff"/>
+    <local:StaffViewPage Title="View Staff List" />
+
+</TabbedPage>

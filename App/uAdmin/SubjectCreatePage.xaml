@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             BackgroundColor="#FFEBEE"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App.uAdmin.SubjectCreatePage">
+    <ContentPage.Content>
+        <StackLayout Padding="25">
+            <StackLayout Orientation="Horizontal" Margin="0,0,0,5">
+                <Picker x:Name="Branch_Picker" Title="Select Branch" HorizontalOptions="FillAndExpand" BackgroundColor="White" TextColor="Black">
+                    <Picker.Items>
+                        <x:String>Computer</x:String>
+                        <x:String>Information Technology</x:String>
+                        <x:String>Electronic and Telecommunication</x:String>
+                        <x:String>Industrial Electronic</x:String>
+                        <x:String>Mechanical</x:String>
+                        <x:String>Civil</x:String>
+                    </Picker.Items>
+                </Picker>
+
+                <Picker x:Name="YY_Picker" Title="Select Year" HorizontalOptions="FillAndExpand" BackgroundColor="White" TextColor="Black">
+                    <Picker.Items>
+                        <x:String>FIRST YEAR</x:String>
+                        <x:String>SECOND YEAR</x:String>
+                        <x:String>THIRD YEAR</x:String>
+                        <x:String>FINAL YEAR</x:String>
+                    </Picker.Items>
+                </Picker>
+            </StackLayout>
+
+            <Entry Placeholder="Subject Name" x:Name="Subject_Entry" TextColor="Black" BackgroundColor="White"/>
+
+            <Button x:Name="SubmitButton" 
+                    Text="Submit" 
+                    HeightRequest="50"                    
+                    TextColor="White" 
+                    Clicked="SubmitButton_Clicked"
+                    BackgroundColor="DodgerBlue"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

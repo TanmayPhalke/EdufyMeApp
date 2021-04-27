@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+              BackgroundColor="#FFEBEE"
+             Visual="Material"
+             x:Class="App.uAdmin.NoticeCreatePage">
+    <ContentPage.Content>
+        <StackLayout Padding="20">           
+
+            <Picker x:Name="RolePicker" Title="Create Notice For" HorizontalOptions="FillAndExpand" BackgroundColor="White" TextColor="Black">
+                <Picker.Items>
+                    <x:String>STUDENT</x:String>
+                    <x:String>STAFF</x:String>
+                    <x:String>ALL</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <Editor x:Name="NoticeEditor" 
+                    AutoSize="TextChanges"
+                    TextColor="Black"
+                    BackgroundColor="White"
+                    Placeholder="Write your notice here..."                      
+                    HorizontalOptions="FillAndExpand" />
+            
+            <Button x:Name="SubmitButton" 
+                    Text="Submit" 
+                    HeightRequest="50"                    
+                    TextColor="White" 
+                    Clicked="SubmitButton_Clicked"
+                    BackgroundColor="DodgerBlue"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

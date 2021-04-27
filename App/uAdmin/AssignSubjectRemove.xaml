@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage    xmlns="http://xamarin.com/schemas/2014/forms"
+                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                Visual="Material"
+                BackgroundColor="#FFEBEE"
+                x:Class="App.uAdmin.AssignSubjectRemove">
+    <ContentPage.Content>
+        <StackLayout Padding="25">
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Name: " Margin="0,0,0,5" TextColor="Black" FontSize="Medium"/>
+                <Label x:Name="StaffName_TextBox" HorizontalOptions="FillAndExpand" Margin="0,0,0,5" TextColor="Black" FontSize="Medium"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Emal: " Margin="0,0,0,5" TextColor="Black" FontSize="Medium"/>
+                <Label x:Name="StaffEmail_TextBox" HorizontalOptions="FillAndExpand" Margin="0,0,0,5" TextColor="Black" FontSize="Medium"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Picker x:Name="Branch_Picker" Title="Select Branch" HorizontalOptions="FillAndExpand" BackgroundColor="White" TextColor="Black" >
+                    <Picker.Items>
+                        <x:String>Computer</x:String>
+                        <x:String>Information Technology</x:String>
+                        <x:String>Electronic and Telecommunication</x:String>
+                        <x:String>Industrial Electronic</x:String>
+                        <x:String>Mechanical</x:String>
+                        <x:String>Civil</x:String>
+                    </Picker.Items>
+                </Picker>
+
+                <Picker x:Name="YY_Picker" Title="Select Year" HorizontalOptions="FillAndExpand" BackgroundColor="White" TextColor="Black"  SelectedIndexChanged="YY_Picker_SelectedIndexChanged" >
+                    <Picker.Items>
+                        <x:String>FIRST YEAR</x:String>
+                        <x:String>SECOND YEAR</x:String>
+                        <x:String>THIRD YEAR</x:String>
+                        <x:String>FINAL YEAR</x:String>
+                    </Picker.Items>
+                </Picker>
+            </StackLayout>
+
+            <ListView x:Name="SubjectsList" HasUnevenRows="True" ItemTapped="SubjectsList_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label Text="{Binding SUBNAME}" HorizontalOptions="FillAndExpand" Margin="0,0,0,5" TextColor="Black" FontSize="Large"/>                             
+                                <Line HorizontalOptions="FillAndExpand"   Stroke="DarkBlue" StrokeDashArray="1,1" StrokeDashOffset="6" X1="0" X2="1500"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

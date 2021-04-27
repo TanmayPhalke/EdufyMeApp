@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             BackgroundColor="AliceBlue"
+             x:Class="App.uStaff.StaffStudentAnalysisPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout x:Name="NavBt" Margin="10" >
+                <Image x:Name="StudAnalysisImgLogo" WidthRequest="250" HeightRequest="250"/>
+                <Button Text="Subjectwise Attendance" WidthRequest="250" BackgroundColor="Coral" HorizontalOptions="CenterAndExpand" Clicked="SubjectwiseAttendanceBtClicked" VerticalOptions="Center" Margin="10"/>
+                <Button Text="Departmentwise Attendance" WidthRequest="250" BackgroundColor="Coral" HorizontalOptions="CenterAndExpand" Clicked="DepartmentwiseAttendanceBtClicked" VerticalOptions="Center" Margin="10"/>
+                <Button Text="Student Marks Insights" WidthRequest="250" BackgroundColor="Coral" HorizontalOptions="CenterAndExpand" Clicked="StudMarksBtClicked" VerticalOptions="Center" Margin="10"/>
+            </StackLayout>
+            
+            <WebView x:Name="AnalysisWebView" IsVisible="false" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

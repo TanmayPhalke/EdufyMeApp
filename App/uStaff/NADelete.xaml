@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Visual="Material"
+             x:Class="App.uStaff.NADelete">
+    <ContentPage.Content>
+        <StackLayout Padding="25">
+
+            <StackLayout Orientation="Horizontal">
+                <Picker x:Name="NAType_Picker" Title="What Do You Want See?" HorizontalOptions="FillAndExpand" BackgroundColor="White" TextColor="Black">
+                    <Picker.Items>
+                        <x:String>ASSIGNMENT</x:String>
+                        <x:String>NOTICE</x:String>
+                    </Picker.Items>
+                </Picker>
+                
+                <Button x:Name="SearchButton" Text="Search" 
+                        HeightRequest="50" 
+                        BackgroundColor="DodgerBlue" 
+                        TextColor="White"
+                        Clicked="SearchButton_Clicked"/>
+
+            </StackLayout>
+
+            <ListView x:Name="NoticeList" HasUnevenRows="True" ItemTapped="NoticeList_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label Text="{Binding CONTENT}" HorizontalOptions="FillAndExpand" Margin="0,0,0,5" TextColor="Black" FontSize="Medium"/>
+                                <Label Text="{Binding UDATE}" HorizontalOptions="EndAndExpand" FontSize="Small" Margin="0,0,0,5" TextColor="Black"/>
+                                <Line HorizontalOptions="FillAndExpand"   Stroke="DarkBlue" StrokeDashArray="1,1" StrokeDashOffset="6" X1="0" X2="1500"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

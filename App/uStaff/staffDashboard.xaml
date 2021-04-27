@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="AliceBlue"
+             Visual="Material"
+             x:Class="App.uStaff.staffDashboard">
+    <ContentPage.Content>
+        <StackLayout Padding="25">
+            <Grid ColumnSpacing="10" RowSpacing="10">
+                <StackLayout Grid.Row="0" Grid.Column="0">
+                    <Image x:Name="AttendanceImage" HeightRequest="120">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="AttendanceImageTapGestureRecognizer_Tapped" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Label Text="Take Attendance" TextColor="Black" HorizontalOptions="CenterAndExpand" />
+                </StackLayout>
+
+                <StackLayout Grid.Row="0" Grid.Column="1">
+                    <Image x:Name="NoticeImage" HeightRequest="120">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="NoticeImageTapGestureRecognizer_Tapped" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Label Text="Notice and Assignment" TextColor="Black" HorizontalOptions="CenterAndExpand" />
+                </StackLayout>
+
+                <StackLayout Grid.Row="1" Grid.Column="0">
+                    <Image x:Name="UploadNotesImage" HeightRequest="120">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="UploadNotesImageTapGestureRecognizer_Tapped" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Label Text="Upload Notes" TextColor="Black" HorizontalOptions="CenterAndExpand" />
+                </StackLayout>
+
+                <StackLayout Grid.Row="1" Grid.Column="1">
+                    <Image x:Name="MarksImage" HeightRequest="120">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="MarksImageTapGestureRecognizer_Tapped" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Label Text="Add Marks" TextColor="Black" HorizontalOptions="CenterAndExpand" />
+                </StackLayout>
+                
+                
+                <StackLayout Grid.Row="2" Grid.Column="0">
+                    <Image x:Name="CreateStudentImage" HeightRequest="120">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="CreateStudentImageTapGestureRecognizer_Tapped" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Label Text="Create Student" TextColor="Black" HorizontalOptions="CenterAndExpand" />
+                </StackLayout>
+
+
+                <StackLayout Grid.Row="2" Grid.Column="1">
+                    <Image x:Name="ChangePasswordImage" HeightRequest="120">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="ChangePasswordImageTapGestureRecognizer_Tapped" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Label Text="Change Password" TextColor="Black" HorizontalOptions="CenterAndExpand" />
+                </StackLayout>
+
+                <StackLayout Grid.Row="3" Grid.Column="0">
+                    <Image x:Name="StudentAnalysisImg" HeightRequest="120">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="StudentAnalysisImageTapRecognizer_Tapped"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Label Text="Student Analysis" TextColor="Black" HorizontalOptions="CenterAndExpand"/>
+                </StackLayout>
+                
+                <StackLayout Grid.Row="3" Grid.Column="1">
+                    <Image x:Name="LogoutImage" HeightRequest="120">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="LogoutImageTapGestureRecognizer_Tapped" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Label Text="Logout" TextColor="Black" HorizontalOptions="CenterAndExpand" />
+                </StackLayout>
+
+                
+
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Visual="Material"
+            BackgroundColor="#FFEBEE"
+             Title="Back To Dashboard"
+             x:Class="App.uStaff.MarksViewStudent">
+    <ContentPage.Content>
+        <StackLayout Padding="25">
+            <Label Text="Search Student and Feed Marks"
+                TextTransform="None"
+                  FontSize="Large"
+                HorizontalOptions="CenterAndExpand" />
+            <StackLayout Orientation="Horizontal">
+                <Picker x:Name="Branch_Picker" Title="Select Branch" HorizontalOptions="FillAndExpand" BackgroundColor="White" TextColor="Black" />
+                <Picker x:Name="YY_Picker" Title="Select Year" HorizontalOptions="FillAndExpand" BackgroundColor="White" TextColor="Black" SelectedIndexChanged="YY_Picker_SelectedIndexChanged" />
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Picker x:Name="ExamType_Picker" Title="Select Exam" HorizontalOptions="FillAndExpand" BackgroundColor="White" TextColor="Black">
+                    <Picker.Items>
+                        <x:String>Unit Test</x:String>
+                        <x:String>Semester</x:String>
+                    </Picker.Items>
+                </Picker>
+                <Picker x:Name="Subject_Picker" Title="Select Subject" HorizontalOptions="FillAndExpand" BackgroundColor="White" TextColor="Black" SelectedIndexChanged="Subject_Picker_SelectedIndexChanged" />                
+            </StackLayout>
+
+            <ListView x:Name="StudentList" HasUnevenRows="True" ItemTapped="StudentList_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Roll Number: " Margin="0,0,0,5" TextColor="Black" FontSize="Medium"/>
+                                    <Label Text="{Binding PE}" HorizontalOptions="FillAndExpand" Margin="0,0,0,5" TextColor="Black" FontSize="Medium"/>
+                                </StackLayout>
+
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Name: " Margin="0,0,0,5" TextColor="Black" FontSize="Medium"/>
+                                    <Label Text="{Binding UNAME}" HorizontalOptions="FillAndExpand" Margin="0,0,0,5" TextColor="Black" FontSize="Large"/>
+                                </StackLayout>
+
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Name: " Margin="0,0,0,5" TextColor="Black" FontSize="Medium"/>
+                                    <Label Text="{Binding EMAIL}" HorizontalOptions="FillAndExpand" Margin="0,0,0,5" TextColor="Black" FontSize="Large"/>
+                                </StackLayout>
+
+                                <Line HorizontalOptions="FillAndExpand"   Stroke="DarkBlue" StrokeDashArray="1,1" StrokeDashOffset="6" X1="0" X2="1500"/>
+
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
